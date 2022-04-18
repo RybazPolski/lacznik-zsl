@@ -13,11 +13,12 @@
             <h1>Bufet "Łącznik" - nasze menu</h1>
         </div>
         <div id="main_menu">
-            <div id="menu"><a href="user.html">Logowanie/Rejestracja</a></div>
-            <div id="menu"><a href="basket.html">Koszyk</a></div>
-            <div id="menu"><a href="profile.html">Twój profil</a></div>
-            <div id="menu"><a href="products.html">Nasze produkty</a></div>
-            <div id="menu"><a href="menu.html">Nasze menu</a></div>
+            <div id="menu"><a href="index.php">Strona główna</a></div>
+            <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
+            <div id="menu"><a href="basket.php">Koszyk</a></div>
+            <div id="menu"><a href="profile.php">Twój profil</a></div>
+            <div id="menu"><a href="products.php">Nasze produkty</a></div>
+            <div id="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
         <div id="left">
             <h3>Nasze menu</h3>

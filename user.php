@@ -13,6 +13,7 @@
             <h1>Bufet "Łącznik" - Logowanie i rejestracja</h1>
         </div>
         <div id="main_menu">
+            <div id="menu"><a href="index.php">Strona główna</a></div>
             <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
             <div id="menu"><a href="basket.php">Koszyk</a></div>
             <div id="menu"><a href="profile.php">Twój profil</a></div>
