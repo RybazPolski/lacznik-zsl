@@ -47,7 +47,7 @@
                 <li>Jacek Jędra</li>
                 <li>Renata Sakhnevych</li>
             </ul>
-            <h4>Źródła (dla strony głównej):</h4>
+            <h4>Źródła (dla strony koszyka):</h4>
             <ul>
 
             </ul>
