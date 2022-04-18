@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 18 Kwi 2022, 19:03
+-- Czas generowania: 18 Kwi 2022, 20:33
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.10
 
@@ -41,6 +41,18 @@ CREATE TABLE `klienci` (
 INSERT INTO `klienci` (`id`, `login`, `haslo`, `nazwa`) VALUES
 (1, 'test', 'Niezgadniesz', 'Stefan'),
 (2, 'dwa', '1234', 'Hermenegilda');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `koszyk`
+--
+
+CREATE TABLE `koszyk` (
+  `id_k` int(11) DEFAULT NULL,
+  `id_p` int(11) DEFAULT NULL,
+  `ilosc` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
