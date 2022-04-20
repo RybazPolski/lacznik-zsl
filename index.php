@@ -11,6 +11,7 @@
     <div id="main">
         <div id="baner">
         <img src="zsl-logo.png" id="logo">
+        <img src="bufet-lacznik-blue.png" id="logo2">
             <h1>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</h1>
         </div>
         <div id="main_menu">
