@@ -10,6 +10,7 @@
 <body>
     <div id="main">
         <div id="baner">
+        <img src="zsl-logo.png" id="logo">
             <h1>Bufet "Łącznik" - Logowanie i rejestracja</h1>
         </div>
         <div id="main_menu">
@@ -23,19 +24,19 @@
         <div id="left">
             <h3>Logowanie:</h3>
             <form action="./php/login.php" method="POST">
-                <label for="login">Login: </label><input type="text" name="login" required><br>
-                <label for="pass">Hasło: </label><input type="password" name="pass" required><br>
-                <input type="submit" name="submitLogin">
+                <label for="login">Login: </label><input type="text" id="pass" name="login" required><br>
+                <label for="pass">Hasło: </label><input type="password" id="pass" name="pass" required><br>
+                <input type="submit" id="button" name="submitLogin">
             </form>
         </div>
         <div id="right">
             <h3>Rejestracja nowego konta:</h3>
             <form action="./php/register.php" method="POST">
-                <label for="login">Login: </label><br><input type="text" name="login" required><br>
-                <label for="username">Nazwa profilu:<sub>(możesz później ją zmienić)</sub></label><br><input type="text" name="username"><br>
-                <label for="pass">Hasło: </label><br><input type="password" name="pass" required><br>
-                <label for="pass2">Powtórz hasło:<sub>(wiem, irytujące ale trzeba)</sub> </label><br><input type="password" name="pass2" required><br>
-                <input type="submit" name="submitRegister">
+                <label for="login">Login: </label><br><input type="text" id="pass" name="login" required><br>
+                <label for="username">Nazwa profilu:<sub>(możesz później ją zmienić)</sub></label><br><input type="text" id="pass" name="username"><br>
+                <label for="pass">Hasło: </label><br><input type="password" name="pass" id="pass" required><br>
+                <label for="pass2">Powtórz hasło:<sub>(wiem, irytujące ale trzeba)</sub> </label><br><input type="password" id="pass" name="pass2" required><br>
+                <input type="submit" id="button"  name="submitRegister">
              </form>
         </div>
         <div id="footer">
@@ -52,5 +53,6 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" id=""><p> bufet.zsl.pl</p></marquee>
 </body>
 </html>

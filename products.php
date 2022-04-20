@@ -10,6 +10,7 @@
 <body>
     <div id="main">
         <div id="baner">
+        <img src="zsl-logo.png" id="logo">
             <h1>Bufet "Łącznik" - nasze produkty</h1>
         </div>
         <div id="main_menu">
@@ -55,5 +56,6 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" id="plywtekst"><p>bufet.zsl.pl</p></marquee>
 </body>
 </html>

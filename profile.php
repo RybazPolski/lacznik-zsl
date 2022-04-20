@@ -10,6 +10,7 @@
 <body>
     <div id="main">
         <div id="baner">
+        <img src="zsl-logo.png" id="logo">
             <h1>Bufet "Łącznik" - Twój profil</h1>
         </div>
         <div id="main_menu">
@@ -25,18 +26,18 @@
             <p>Login i nazwa<span name="login"></span> <span name="username"></span></p>
             <h4>Zmiana nazwy użytkownika:</h4>
             <form action="profile.php" method="">
-                <p>Podaj starą nazwę użytkownika: </p><input type="text" name="old_username">
-                <p>Podaj hasło: </p><input type="text" name="current_password">
-                <p>Podaj nową nazwę użytkownika: </p><input type="text" name="new_username">
-                <p><input type="submit" name="change_username" value="Zmień nazwę użytkownika"></p>
+                <p>Podaj starą nazwę użytkownika: </p><input type="text" id="pass" name="old_username">
+                <p>Podaj hasło: </p><input type="text" id="pass" name="current_password">
+                <p>Podaj nową nazwę użytkownika: </p><input type="text" id="pass" name="new_username">
+                <p><input type="submit" id="button" name="change_username" value="Zmień nazwę użytkownika"></p>
             </form>
             <h4>Zmiana hasła użytkownika:</h4>
             <form action="profile.php" method="">
-                <p>Podaj nazwę użytkownika: </p><input type="text" name="username">
-                <p>Podaj stare hasło: </p><input type="text" name="current_password">
-                <p>Podaj nowe hasło: </p><input type="text" name="new_password1">
-                <p>Potwierdź nowe hasło: </p><input type="text" name="new_password2">
-                <p><input type="submit" name="change_password" value="Zmień hasło"></p>
+                <p>Podaj nazwę użytkownika: </p><input type="text"id="pass" name="username">
+                <p>Podaj stare hasło: </p><input type="text" id="pass" name="current_password">
+                <p>Podaj nowe hasło: </p><input type="text" id="pass" name="new_password1">
+                <p>Potwierdź nowe hasło: </p><input type="text" id="pass" name="new_password2">
+                <p><input type="submit" id="button" name="change_password" value="Zmień hasło"></p>
             </form>
         </div>
         <div id="right">
@@ -46,12 +47,12 @@
             </ul>
             <h3>Usuwanie konta</h3>
             <form action="profile.php" method="">
-                <p>Podaj nazwę użytkownika: </p><input type="text" name="username">
-                <p>Podaj hasło: </p><input type="text" name="current_password1">
-                <p>Podaj ponownie hasło: </p><input type="text" name="current_password2">
+                <p>Podaj nazwę użytkownika: </p><input type="text" id="pass" name="username">
+                <p>Podaj hasło: </p><input type="text" id="pass" name="current_password1">
+                <p>Podaj ponownie hasło: </p><input type="text" id="pass" name="current_password2">
                 <p>Potwierdź chęć usunięcia konta: </p><input type="checkbox" name="confirm_deleting_account">
                 <h4>UWAGA! Tej operacji <b>NIE DA SIĘ</b> cofnąć!!!</h4>
-                <p><input type="submit" name="delete_account" value="Usuń bezpowrotnie konto"></p>
+                <p><input type="submit" id="button" name="delete_account" value="Usuń bezpowrotnie konto"></p>
             </form>
         </div>
         <div id="footer">
@@ -68,5 +69,6 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" id="plywtekst"><p>bufet.zsl.pl</p></marquee>
 </body>
 </html>

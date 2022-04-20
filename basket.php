@@ -10,6 +10,7 @@
 <body>
     <div id="main">
         <div id="baner">
+            <img src="zsl-logo.png" id="logo">
             <h1>Bufet "Łącznik" - Twój koszyk</h1>
         </div>
         <div id="main_menu">
@@ -24,17 +25,17 @@
             <h3>Zawartość Twojego koszyka</h3>
             <form action="" method="">
             <ol>
-                <li></li><input type="number" name="amount1" min="1">
-                <li></li><input type="number" name="amount2" min="1">
-                <li></li><input type="number" name="amount3" min="1">
+                <li></li><input id="pass" type="number" name="amount1" min="1">
+                <li></li><input id="pass" type="number" name="amount2" min="1">
+                <li></li><input id="pass" type="number" name="amount3" min="1">
             </ol>
             <p>Suma do zapłaty: <span name="payment"></span></p>
             <h3>Wybierz metodę płatności</h3>
-            <p>Przy odbiorze<input type="radio" name="paymentMethod" id="collection"></p>
-            <p>Przelew tradycyjny<input type="radio" name="paymentMethod" id="bankTransfer"></p>
-            <p>BLIK<input type="radio" name="paymentMethod" id="blik"></p>
-            <p>Pole do wprowadzania ewentualnych uwag do zamówienia <input type="text" name="comment"> (pole opcjonalne)</p>
-            <input type="submit" value="Złóż zamówienie!" name="sub_order">
+            <p>Przy odbiorze<input type="radio" id="radio" name="paymentMethod" id="collection"></p>
+            <p>Przelew tradycyjny<input type="radio" id="radio" name="paymentMethod" id="bankTransfer"></p>
+            <p>BLIK<input type="radio" name="paymentMethod" id="radio" id="blik"></p>
+            <p>Pole do wprowadzania ewentualnych uwag do zamówienia <input type="text" id="pass" name="comment"> (pole opcjonalne)</p>
+            <input type="submit" id="button" value="Złóż zamówienie!" name="sub_order">
             </form>
         </div>
         <div id="right">
@@ -54,5 +55,6 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" id="plywtekst">bufet.zsl.pl</marquee>
 </body>
 </html>
