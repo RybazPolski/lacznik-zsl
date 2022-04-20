@@ -1,3 +1,4 @@
+<?php include "./php/essentials.php"; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -27,17 +28,19 @@
             <form action="./php/login.php" method="POST">
                 <label for="login">Login: </label><input type="text" id="pass" name="login" required><br>
                 <label for="pass">Hasło: </label><input type="password" id="pass" name="pass" required><br>
-                <input type="submit" id="button" name="submitLogin">
+                <span style="color:red;" id="error"><?php displayFromGET('loginError'); ?></span><br>
+                <input type="submit" id="button" value="Zaloguj" name="submitLogin">
             </form>
         </div>
         <div id="right">
             <h3>Rejestracja nowego konta:</h3>
             <form action="./php/register.php" method="POST">
-                <label for="login">Login: </label><br><input type="text" id="pass" name="login" required><br>
+                <label for="login">Login:<span style="color:red;">*</span> </label><br><input type="text" id="pass" name="login" required><br>
                 <label for="username">Nazwa profilu:<sub>(możesz później ją zmienić)</sub></label><br><input type="text" id="pass" name="username"><br>
-                <label for="pass">Hasło: </label><br><input type="password" name="pass" id="pass" required><br>
-                <label for="pass2">Powtórz hasło:<sub>(wiem, irytujące ale trzeba)</sub> </label><br><input type="password" id="pass" name="pass2" required><br>
-                <input type="submit" id="button"  name="submitRegister">
+                <label for="pass">Hasło:<span style="color:red;">*</span> </label><br><input type="password" name="pass" id="pass" required><br>
+                <label for="pass2">Powtórz hasło:<span style="color:red;">*</span><sub>(wiem, irytujące ale trzeba)</sub> </label><br><input type="password" id="pass" name="pass2" required><br>
+                <span style="color:red;" id="error"><?php displayFromGET('registerError'); ?></span><br>
+                <input type="submit" id="button" value="Zarejestruj" name="submitRegister">
              </form>
         </div>
         <div id="footer">

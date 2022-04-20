@@ -17,6 +17,8 @@ if(checkInput('login','POST')&&checkInput('pass','POST')){
     if($res->num_rows==1){
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $pass;
+        $_SESSION['authorized'] = true;
+
         $conn->close();
         header("Location: ../index.php");
         exit();

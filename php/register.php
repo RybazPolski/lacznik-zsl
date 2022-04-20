@@ -14,7 +14,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         exit();
     };
     if(!preg_match('/[a-z]/', $_POST['pass'])||!preg_match('/[A-Z]/', $_POST['pass'])||!preg_match('/[0-9]/', $_POST['pass'])){
-        header("Location: ../user.php?registerError=Hasło musi zawierać minimum jedną dużą i małą liczbę oraz cyfrę");
+        header("Location: ../user.php?registerError=Hasło musi zawierać minimum jedną dużą i małą literę oraz cyfrę");
         exit();
     };
     
@@ -52,6 +52,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         session_start();
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $pass;
+        $_SESSION['authorized'] = true;
 
         $q = "INSERT INTO `klienci`(`login`,`nazwa`,`haslo`) VALUES ('$login','$username',PASSWORD('$pass'))";
         $conn->query($q);
