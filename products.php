@@ -22,8 +22,8 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left">
-            <h2 style="clear: both;">Nasze produkty</h2>
+        <div class="left" style="clear: both;">
+            <h2>Nasze produkty</h2>
                 <?php include './php/displayProducts.php' ?>
         </div>
         <div class="right">

@@ -22,7 +22,7 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left">
+        <div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
             <form action="" method="">
             <ol>
