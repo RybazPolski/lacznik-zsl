@@ -1,7 +1,7 @@
 body{
     background-color: rgb(255, 255, 255);
 }
-#menu a{
+.menu a{
     display: block;
     float: left;
     text-align: center;
@@ -20,12 +20,12 @@ body{
     -moz-box-shadow: 0px 2px 3px gray;
     -webkit-box-shadow: 0px 2px 3px gray;
 }
-#menu a:hover{
+.menu a:hover{
     color: #2b2d72;
     background-color: #ffffff;
     border: 2px rgb(44, 53, 228);
 }
-#plywtekst{
+.plywtekst{
 color: #2b2d72;
 }
 h1{
@@ -33,9 +33,9 @@ h1{
     font-style: normal;
     color: rgb(0, 0, 0);
     font-size:3em;
-    text-shadow:1px 2px 3px #2b2d72;
+    text-shadow:1px 2px 3px .2b2d72;
 }
-#pass{
+.pass{
     width: 230px;
     height: 30px;
     border-top-right-radius: 10px;
@@ -44,26 +44,26 @@ h1{
     border-bottom-color: #2b2d72;
 }
 
-#left{
+/* .left{
     text-align:left;
     margin-right: 1200px;
 }
-#right{
+.right{
     text-align:left;
     margin-right: 1200px;
-}
-#footer{
+} */
+.footer{
     text-align: left;
 }
-#logo{
+.logo{
     width: 15%;
     height: 5%;
 }
-#logo2{
+.logo2{
     width: 35%;
     height: 15%;
 }
-#button{
+.button{
     background-color: #2b2d72;
         color: white;
        
@@ -73,7 +73,7 @@ h1{
     height: 25px;
       }
       
-      #button:hover {
+      .button:hover {
         background-color: #ffffff ;
        color:#2b2d72;
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);

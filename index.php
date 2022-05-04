@@ -8,29 +8,29 @@
     <title>Łącznik Online - strona główna</title>
 </head>
 <body>
-    <div id="main">
-        <div id="baner">
-        <img src="zsl-logo.png" id="logo">
-        <img src="bufet-lacznik-blue.png" id="logo2">
+    <div class="main">
+        <div class="baner">
+        <img src="zsl-logo.png" class="logo">
+        <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</h1>
         </div>
-        <div id="main_menu">
-            <div id="menu"><a id="napis" href="index.php">Strona główna</a></div>
-            <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div id="menu"><a href="basket.php">Koszyk</a></div>
-            <div id="menu"><a href="profile.php">Twój profil</a></div>
-            <div id="menu"><a href="products.php">Nasze produkty</a></div>
-            <div id="menu"><a href="menu.php">Nasze menu</a></div>
+        <div class="main_menu">
+            <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
+            <div class="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <div class="menu"><a href="profile.php">Twój profil</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div id="left">
+        <div class="left">
             <h3>O nas:</h3>
             <p>(...)</p>
         </div>
-        <div id="right">
+        <div class="right">
             <h3>Informacje o naszej firmie:</h3>
             <p>(...)</p>
         </div>
-        <div id="footer">
+        <div class="footer">
             <h4>Autorzy:</h4>
             <ul>
                 <li>Julian Rybarczyk</li>
@@ -44,6 +44,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" id="plywtekst"><p>bufet.zsl.pl</p></marquee>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p>bufet.zsl.pl</p></marquee>
 </body>
 </html>
