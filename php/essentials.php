@@ -1,4 +1,7 @@
 <?php
+
+    if(!isset($phpPath)){$phpPath = ".";}
+
     function checkInput($input_name,$method)
     {
         if($method=='GET'){
@@ -28,6 +31,58 @@
             }
         };
         return true;
+    }
+
+    function isLoggedIn(){
+        if(session_status()!=PHP_SESSION_ACTIVE)session_start();
+        if(isset($_SESSION['authorized'])&&$_SESSION['authorized']){
+
+            $login = htmlentities($_SESSION['login'], ENT_QUOTES);
+            $pass = htmlentities($_SESSION['password'], ENT_QUOTES);    
+            $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
+        
+            // if(!isset($phpPath)){$phpPath = ".";}
+            require "dbaccess.php";
+            $conn = new mysqli($adr,$usr,$pwd,$db);
+            $res = $conn->query($q);
+            if($res->num_rows==1){
+                $conn->close();
+                return true;
+            }else{
+                if(isset($_COOKIE['remember'])&&$_COOKIE['remember']){
+                    $login = htmlentities($_COOKIE['login'], ENT_QUOTES);
+                    $pass = htmlentities($_COOKIE['password'], ENT_QUOTES);    
+                    $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
+
+                    $res = $conn->query($q);
+                    $conn->close();
+                    if($res->num_rows==1){
+                        return true;
+                    }else{
+                        return false;
+                    }
+
+                }
+                return false;
+            };
+            
+        }else{
+            if(isset($_COOKIE['remember'])&&$_COOKIE['remember']){
+                $login = htmlentities($_COOKIE['login'], ENT_QUOTES);
+                $pass = htmlentities($_COOKIE['password'], ENT_QUOTES);    
+                $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
+
+                $conn = new mysqli($adr,$usr,$pwd,$db);
+                $res = $conn->query($q);
+                $conn->close();
+                if($res->num_rows==1){
+                    return true;
+                }else{
+                    return false;
+                }
+
+            }
+        };
     }
 
 ?>

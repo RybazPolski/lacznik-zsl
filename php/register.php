@@ -49,7 +49,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         echo "<br>$login<br>$username<br>$pass<br>";
         $pass = hash("md5",$pass);
         
-        session_start();
+        if(session_status()!=PHP_SESSION_ACTIVE)session_start();
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $pass;
         $_SESSION['authorized'] = true;
@@ -57,6 +57,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         $q = "INSERT INTO `klienci`(`login`,`nazwa`,`haslo`) VALUES ('$login','$username',PASSWORD('$pass'))";
         $conn->query($q);
         $conn->close();
+        header("Location: ../index.php");
         exit();
     }else{
         $conn->close();

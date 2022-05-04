@@ -1,5 +1,5 @@
 <?php
-    include './php/dbaccess.php';
+    include "$phpPath/dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $res = $conn->query("SELECT * FROM `produkty`");
     while($obj = $res->fetch_object()){
@@ -20,9 +20,14 @@
                 <table class='priceANDstock'>
                     <tr>
                         <td class='nameTd' style='width:12.5vw; text-align:left;'>$obj->nazwa</td>
-                        <td class='buttonTd' style='width:12.5vw; text-align:right;'>
-                            <button class='addToCartButton' onclick='addToCart($obj->id)'>Dodaj do koszyka</button>
-                        </td>
+                        <td class='buttonTd' style='width:12.5vw; text-align:right;'>";
+                        if(isLoggedIn()){
+                            echo "<button class='addToCartButton' onclick='addToCart($obj->id)'>Dodaj do koszyka</button>";
+                        }else{
+                            echo "<button class='addToCartButton' disabled>Zaloguj się aby dodać do koszyka</button>";
+                        }
+                        
+                        echo "</td>
                     </tr>
                     <tr>
                         <td class='priceTd' style='width:12.5vw; text-align:left;'>$obj->cena</td>

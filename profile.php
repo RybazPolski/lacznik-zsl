@@ -1,3 +1,4 @@
+<?php $phpPath='./php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,16 +16,18 @@
             <h1>Bufet "Łącznik" - Twój profil</h1>
         </div>
         <div class="main_menu">
-            <div class="menu"><a href="index.php">Strona główna</a></div>
-            <div class="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <div class="menu"><a href="profile.php">Twój profil</a></div>
-            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <?php include "$phpPath/profileOrLogin.php"; 
+            if(!isLoggedIn()){
+                header('Location: user.php');
+            }?>
         </div>
         <br><br><div class="left" style="clear: both;">
             <h3>Twoje dane:</h3>
-            <p>Login i nazwa<span name="login"></span> <span name="username"></span></p>
+            <p>Login i nazwa:<span name="login"></span> <span name="username"></span></p>
             <h4>Zmiana nazwy użytkownika:</h4>
             <form action="profile.php" method="">
                 <p>Podaj starą nazwę użytkownika: </p><input type="text" class="pass" name="old_username">

@@ -1,3 +1,4 @@
+<?php $phpPath='./php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,20 +16,19 @@
             <h1>Bufet "Łącznik" - nasze produkty</h1>
         </div>
         <div class="main_menu">
-            <div class="menu"><a href="index.php">Strona główna</a></div>
-            <div class="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <div class="menu"><a href="profile.php">Twój profil</a></div>
-            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <?php include "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
-            <h2>Nasze produkty</h2>
-                <?php include './php/displayProducts.php' ?>
-        </div>
-        <div class="right">
             <h2>Aktualnie w promocji!</h2>
             <?php include './php/displayPromo.php' ?>    
+        </div>
+        <div class="right">
+            <h2>Wszystkie produkty</h2>
+            <?php include './php/displayProducts.php' ?>
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
