@@ -22,8 +22,11 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left" style="clear: both;">
-            <h3>Nasze menu</h3>
+        <br><br><div class="left" style="clear: both;">
+
+            <?php include './php/displayMenu.php' ?>
+
+            <!-- <h3>Nasze menu</h3>
             <h4>Kotlet mielony z ziemniakami</h4>
             <img src="" alt="Kotlet mielony z ziemniakami">
             <p>(...)</p>
@@ -42,7 +45,7 @@
             <h4>(...)</h4>
             <img src="" alt="(...)">
             <p>(...)</p>
-        </div>
+        </div> -->
         <div class="footer">
             <h4>Autorzy:</h4>
             <ul>
@@ -57,6 +60,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" class="plywtekst"><p>bufet.zsl.pl</p></marquee>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p>lacznik-zsl.pl</p></marquee>
 </body>
 </html>

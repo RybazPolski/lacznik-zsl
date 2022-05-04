@@ -22,7 +22,7 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left" style="clear: both;">
+        <br><br><div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
             <form action="" method="">
             <ol>
@@ -56,6 +56,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" class="plywtekst">bufet.zsl.pl</marquee>
+    <marquee behavior="scroll" direction="right" class="plywtekst">lacznik-zsl.pl</marquee>
 </body>
 </html>

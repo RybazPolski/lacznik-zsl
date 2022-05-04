@@ -22,7 +22,7 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left" style="clear: both;">
+        <br><br><div class="left" style="clear: both;">
             <h3>Twoje dane:</h3>
             <p>Login i nazwa<span name="login"></span> <span name="username"></span></p>
             <h4>Zmiana nazwy użytkownika:</h4>
@@ -70,6 +70,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" class="plywtekst"><p>bufet.zsl.pl</p></marquee>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p>lacznik-zsl.pl</p></marquee>
 </body>
 </html>

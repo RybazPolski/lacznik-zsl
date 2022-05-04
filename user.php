@@ -23,7 +23,7 @@
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
         </div>
-        <div class="left" style="clear: both;">
+        <br><br><div class="left" style="clear: both;">
             <h3>Logowanie:</h3>
             <form action="./php/login.php" method="POST">
                 <label for="login">Login: </label><input type="text" class="pass" name="login" required><br>
@@ -57,6 +57,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" class=""><p> bufet.zsl.pl</p></marquee>
+    <marquee behavior="scroll" direction="right" class=""><p> lacznik-zsl.pl</p></marquee>
 </body>
 </html>
