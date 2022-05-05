@@ -57,6 +57,9 @@
                     $res = $conn->query($q);
                     $conn->close();
                     if($res->num_rows==1){
+                        $_SESSION['authorized'] = true;
+                        $_SESSION['login'] = $login;
+                        $_SESSION['password'] = $pass;
                         return true;
                     }else{
                         return false;
@@ -76,6 +79,9 @@
                 $res = $conn->query($q);
                 $conn->close();
                 if($res->num_rows==1){
+                    $_SESSION['authorized'] = true;
+                    $_SESSION['login'] = $login;
+                    $_SESSION['password'] = $pass;
                     return true;
                 }else{
                     return false;
