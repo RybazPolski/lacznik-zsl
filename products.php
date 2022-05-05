@@ -45,7 +45,7 @@
         </div>
     </div>
     <marquee behavior="scroll" direction="right" class="plywtekst"><p>lacznik-zsl.pl</p></marquee>
-    <script src="./jquery-3.6.0.min.js"></script>
-    <script src="./addToCart.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/addToCart.js"></script>
 </body>
 </html>
