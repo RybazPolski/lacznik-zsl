@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Maj 2022, 19:55
+-- Czas generowania: 05 Maj 2022, 20:07
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 7.4.29
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `administracja` (
   `ID` int(11) NOT NULL,
   `login` varchar(16) DEFAULT NULL,
-  `haslo` varchar(32) DEFAULT NULL,
+  `haslo` varchar(41) DEFAULT NULL,
   `nazwa` varchar(48) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,7 +53,7 @@ INSERT INTO `administracja` (`ID`, `login`, `haslo`, `nazwa`) VALUES
 CREATE TABLE `klienci` (
   `id` int(11) NOT NULL,
   `login` varchar(16) NOT NULL,
-  `haslo` varchar(32) NOT NULL,
+  `haslo` varchar(41) NOT NULL,
   `nazwa` varchar(48) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
