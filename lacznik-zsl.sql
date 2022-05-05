@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 23 Kwi 2022, 22:53
--- Wersja serwera: 10.4.14-MariaDB
--- Wersja PHP: 7.4.10
+-- Czas generowania: 05 Maj 2022, 19:55
+-- Wersja serwera: 10.4.24-MariaDB
+-- Wersja PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `lacznik`
+-- Baza danych: `lacznik-zsl`
 --
 
 -- --------------------------------------------------------
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administracja` (
   `ID` int(11) NOT NULL,
-  `login` varchar(50) DEFAULT NULL,
-  `haslo` varchar(70) DEFAULT NULL,
-  `nazwa` varchar(50) DEFAULT NULL
+  `login` varchar(16) DEFAULT NULL,
+  `haslo` varchar(32) DEFAULT NULL,
+  `nazwa` varchar(48) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -52,9 +52,9 @@ INSERT INTO `administracja` (`ID`, `login`, `haslo`, `nazwa`) VALUES
 
 CREATE TABLE `klienci` (
   `id` int(11) NOT NULL,
-  `login` varchar(50) NOT NULL,
-  `haslo` varchar(70) NOT NULL,
-  `nazwa` varchar(50) DEFAULT NULL
+  `login` varchar(16) NOT NULL,
+  `haslo` varchar(32) NOT NULL,
+  `nazwa` varchar(48) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -72,6 +72,7 @@ INSERT INTO `klienci` (`id`, `login`, `haslo`, `nazwa`) VALUES
 --
 
 CREATE TABLE `koszyk` (
+  `id` int(11) NOT NULL COMMENT 'Żeby dało się modyfikować w phpMyAdmin',
   `id_k` int(11) DEFAULT NULL,
   `id_p` int(11) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL
@@ -136,17 +137,9 @@ CREATE TABLE `zamowienia` (
   `id_k` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `odebrano` enum('tak','nie') DEFAULT NULL,
-  `anulowano` enum('tak','nie') DEFAULT NULL
+  `anulowano` enum('tak','nie') DEFAULT NULL,
+  `uwagi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `zamowienia`
---
-
-INSERT INTO `zamowienia` (`id`, `id_k`, `data`, `odebrano`, `anulowano`) VALUES
-(1, 1, '2022-04-18', 'nie', 'nie'),
-(2, 1, '2022-04-14', 'nie', 'tak'),
-(3, 2, '2022-03-11', 'tak', 'nie');
 
 -- --------------------------------------------------------
 
@@ -162,16 +155,6 @@ CREATE TABLE `zawartosc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `zawartosc`
---
-
-INSERT INTO `zawartosc` (`id`, `id_z`, `id_p`, `ilosc`) VALUES
-(1, 1, 1, 1),
-(2, 2, 1, 1),
-(3, 2, 2, 1),
-(4, 3, 4, 2);
-
---
 -- Indeksy dla zrzutów tabel
 --
 
@@ -185,6 +168,12 @@ ALTER TABLE `administracja`
 -- Indeksy dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `koszyk`
+--
+ALTER TABLE `koszyk`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -212,7 +201,7 @@ ALTER TABLE `zawartosc`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
@@ -226,6 +215,12 @@ ALTER TABLE `administracja`
 --
 ALTER TABLE `klienci`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT dla tabeli `koszyk`
+--
+ALTER TABLE `koszyk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Żeby dało się modyfikować w phpMyAdmin';
 
 --
 -- AUTO_INCREMENT dla tabeli `menu`
@@ -243,13 +238,13 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `zawartosc`
 --
 ALTER TABLE `zawartosc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
