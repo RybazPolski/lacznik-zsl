@@ -1,6 +1,7 @@
 <?php
     include "$phpPath/dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
+    $conn->set_charset("utf8mb4");
     $res = $conn->query("SELECT * FROM `produkty` WHERE `promocja`>0");
     while($obj = $res->fetch_object()){
         

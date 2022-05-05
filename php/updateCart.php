@@ -1,6 +1,7 @@
 <?php
     require "./dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
+    $conn->set_charset("utf8mb4");
     session_start();
     $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->id;            
     

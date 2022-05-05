@@ -11,6 +11,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')){
 
     require "dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
+    $conn->set_charset("utf8mb4");
     $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
     // echo $q;
     $res = $conn->query($q);

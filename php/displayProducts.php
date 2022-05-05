@@ -2,6 +2,7 @@
     include "$phpPath/dbaccess.php";
     // include 'essentials.php';
     $conn = new mysqli($adr,$usr,$pwd,$db);
+    $conn->set_charset("utf8mb4");
     $res = $conn->query("SELECT * FROM `produkty`");
     while($obj = $res->fetch_object()){
 

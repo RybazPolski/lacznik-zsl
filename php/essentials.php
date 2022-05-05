@@ -44,6 +44,7 @@
         
             if(!isset($phpPath)){$phpPath = ".";}
             $conn = new mysqli($adr,$usr,$pwd,$db);
+            $conn->set_charset("utf8mb4");
             $res = $conn->query($q);
             if($res->num_rows==1){
                 $conn->close();
@@ -76,6 +77,7 @@
                 $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
 
                 $conn = new mysqli($adr,$usr,$pwd,$db);
+                $conn->set_charset("utf8mb4");
                 $res = $conn->query($q);
                 $conn->close();
                 if($res->num_rows==1){

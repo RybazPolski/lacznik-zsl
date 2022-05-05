@@ -30,6 +30,7 @@
         <h2>Witaj <span name="username"><?php
             require './php/dbaccess.php';
             $conn = new mysqli($adr,$usr,$pwd,$db);
+            $conn->set_charset("utf8mb4");
             echo $conn->query("SELECT `nazwa` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->nazwa;
             $conn->close();
             ?></span> <sub name="login">(<?php echo $_SESSION['login']?>)</sub></h2>

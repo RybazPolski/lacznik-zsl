@@ -41,6 +41,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
 
     require "dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
+    $conn->set_charset("utf8mb4");
     
     $login = htmlentities($_POST['login'], ENT_QUOTES);
     $q = "SELECT * FROM `klienci` WHERE `login`='$login'";
