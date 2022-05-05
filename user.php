@@ -31,6 +31,7 @@
             <form action="./php/login.php" method="POST">
                 <label for="login">Login: </label><input type="text" class="pass" name="login" required><br>
                 <label for="pass">Hasło: </label><input type="password" class="pass" name="pass" required><br>
+                <input type="checkbox" name="remember"> <label for="remember">Nie wylogowuj mnie</label><br>
                 <span style="color:red;" class="error"><?php displayFromGET('loginError'); ?></span><br>
                 <input type="submit" class="button" value="Zaloguj" name="submitLogin">
             </form>

@@ -18,10 +18,10 @@ if(checkInput('login','POST')&&checkInput('pass','POST')){
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $pass;
         $_SESSION['authorized'] = true;
-        if($_POST['remember']==true){
+        if(isset($_POST['remember'])){
             setcookie('remember',true, time() + (86400 * 365), "/");
             setcookie('login',$login, time() + (86400 * 365), "/");
-            setcookie('password',$password, time() + (86400 * 365), "/");
+            setcookie('password',$pass, time() + (86400 * 365), "/");
         }
         $conn->close();
         header("Location: ../index.php");

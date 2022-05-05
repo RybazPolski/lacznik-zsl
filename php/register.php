@@ -4,7 +4,10 @@ require "./essentials.php";
 
 if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','POST')){
 
-    
+    if(preg_match_all('/[^A-Za-z0-9_]/', $_POST['login'])){
+        header('Location: ../user.php?registerError=Nazwa może zawierać tylko litery, cyfry oraz "_"!');
+        exit();
+    };
     if(strlen($_POST['pass'])<8){
         header("Location: ../user.php?registerError=Za krótkie hasło! (min 8 znaków)");
         exit();
@@ -24,15 +27,15 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
     };
     
     if(strlen($_POST['login'])<3){
-        header("Location: ../user.php?registerError=Za krótka nazwa użytkownika! (min 3 znaki)");
+        header("Location: ../user.php?registerError=Za długi login! (min 3 znaki)");
         exit();
     };
     if(strlen($_POST['login'])>16){
-        header("Location: ../user.php?registerError=Za długa nazwa użytkownika! (max 16 znaków)");
+        header("Location: ../user.php?registerError=Za długi login! (max 16 znaków)");
         exit();
     };
     if(preg_match_all('/[^A-Za-z0-9_]/', $_POST['login'])){
-        header('Location: ../user.php?registerError=Nazwa może zawierać tylko litery, cyfry oraz "_"!');
+        header('Location: ../user.php?registerError=Nazwa może zawierać tylko litery, cyfry oraz "_"! (bez polskich znaków)');
         exit();
     };
 
@@ -55,9 +58,13 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         $_SESSION['authorized'] = true;
 
         $q = "INSERT INTO `klienci`(`login`,`nazwa`,`haslo`) VALUES ('$login','$username',PASSWORD('$pass'))";
-        $conn->query($q);
-        $conn->close();
-        header("Location: ../index.php");
+        if($conn->query($q)){
+            $conn->close();
+            header("Location: ../profile.php");
+        }else{
+            $conn->close();
+            header("Location: ../user.php?registerError=Wystąpił błąd. Spróbuj ponownie później.");
+        }
         exit();
     }else{
         $conn->close();

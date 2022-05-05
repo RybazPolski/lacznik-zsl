@@ -34,6 +34,7 @@
     }
 
     function isLoggedIn(){
+        require "dbaccess.php";
         if(session_status()!=PHP_SESSION_ACTIVE)session_start();
         if(isset($_SESSION['authorized'])&&$_SESSION['authorized']){
 
@@ -41,8 +42,7 @@
             $pass = htmlentities($_SESSION['password'], ENT_QUOTES);    
             $q = "SELECT * FROM `klienci` WHERE `login`='$login' AND `haslo`=PASSWORD('$pass')";
         
-            // if(!isset($phpPath)){$phpPath = ".";}
-            require "dbaccess.php";
+            if(!isset($phpPath)){$phpPath = ".";}
             $conn = new mysqli($adr,$usr,$pwd,$db);
             $res = $conn->query($q);
             if($res->num_rows==1){

@@ -1,12 +1,14 @@
 <?php
-    if(session_status()!=PHP_SESSION_ACTIVE)session_start();
-    session_unset();
-    $_SESSION['authorized']=false;
-    unset($_SESSION['login']);
-    unset($_SESSION['password']);
+    if(session_status()!=PHP_SESSION_ACTIVE){
+        session_start();
+    }
+    session_destroy();
+    // $_SESSION['authorized'] = false;
+    // $_SESSION['login'] = null;
+    // $_SESSION['password'] = null;
     setcookie('remember', false, time()-1000, '/');
-    setcookie('login', '', time()-1000, '/');
-    setcookie('password', '', time()-1000, '/');
+    setcookie('login', null, time()-1000, '/');
+    setcookie('password', null, time()-1000, '/');
     header('Location: ../index.php');
     exit();
 ?>

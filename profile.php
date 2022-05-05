@@ -26,6 +26,7 @@
             }?>
         </div>
         <br><br><div class="left" style="clear: both;">
+        <h3><a href="./php/logoff.php">Wyloguj</a></h3>
             <h3>Twoje dane:</h3>
             <p>Login i nazwa:<span name="login"></span> <span name="username"></span></p>
             <h4>Zmiana nazwy użytkownika:</h4>
