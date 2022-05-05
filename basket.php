@@ -27,18 +27,11 @@
         </div>
         <br><br><div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
-            <form action="" method="">
             <?php require "./php/displayCart.php" ?>
             <!-- <h3>Wybierz metodę płatności</h3>
             <p>Przy odbiorze<input type="radio" class="radio" name="paymentMethod" class="collection"></p>
             <p>Przelew tradycyjny<input type="radio" class="radio" name="paymentMethod" class="bankTransfer"></p>
-            <p>BLIK<input type="radio" name="paymentMethod" class="radio" class="blik"></p> -->
-            <p>Pole do wprowadzania ewentualnych uwag do zamówienia <input type="text" class="pass" name="comment"> (pole opcjonalne)</p>
-            <input type="submit" class="button" value="Złóż zamówienie!" name="sub_order"> (płatność przy użyciu Przelewy24)
-            </form>
-        </div>
-        <div class="right">
-            <h3>(...)</h3>
+            <p>BLIK<input type="radio" name="paymentMethod" class="radio" class="blik"></p> -->            
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
@@ -55,5 +48,7 @@
         </div>
     </div>
     <marquee behavior="scroll" direction="right" class="plywtekst">lacznik-zsl.pl</marquee>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/updateCart.js"></script>
 </body>
 </html>
