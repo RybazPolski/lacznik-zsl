@@ -18,7 +18,13 @@
         $conn->close();
         exit();
     }else{
-        if($res = $conn->query("SELECT `cena`,`zapas` FROM `produkty` WHERE `id`=$id")->fetch_object()){
+        if($res = $conn->query("SELECT `cena`,`zapas`,`promocja` FROM `produkty` WHERE `id`=$id")->fetch_object()){
+            if($res->promocja > 0){
+                $res->cena = $res->cena - $res->cena*(0.01*$res->promocja);
+            }else{
+                $res->cena = $res->cena;
+                
+            }
             $price = $res->cena;
             $zapas = $res->zapas;
             if($conn->query("SELECT * FROM `koszyk` WHERE `id_p`=$id AND `id_k`=$id_k")->num_rows==1){

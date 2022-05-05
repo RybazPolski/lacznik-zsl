@@ -14,6 +14,12 @@
                 break;
             }
             $prod = $res2->fetch_object();
+            if($prod->promocja > 0){
+                $prod->cena = $prod->cena - $prod->cena*(0.01*$prod->promocja);
+            }else{
+                $prod->cena = $prod->cena;
+    
+            }
             $price = $prod->cena*$obj->ilosc;
             $fullPrice = $fullPrice+$price;
             echo "<li>$prod->nazwa x<input type='number' value='$obj->ilosc' style='width:2.5%' min='0' max='$prod->zapas' id='amount$prod->id' onchange='updateCart($prod->id)'> - <span id='price$prod->id' class='partPrice'>$price</span>zł</li>";
