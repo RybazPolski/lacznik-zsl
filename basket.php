@@ -28,18 +28,13 @@
         <br><br><div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
             <form action="" method="">
-            <ol>
-                <li></li><input class="pass" type="number" name="amount1" min="1">
-                <li></li><input class="pass" type="number" name="amount2" min="1">
-                <li></li><input class="pass" type="number" name="amount3" min="1">
-            </ol>
-            <p>Suma do zapłaty: <span name="payment"></span></p>
-            <h3>Wybierz metodę płatności</h3>
+            <?php require "./php/displayCart.php" ?>
+            <!-- <h3>Wybierz metodę płatności</h3>
             <p>Przy odbiorze<input type="radio" class="radio" name="paymentMethod" class="collection"></p>
             <p>Przelew tradycyjny<input type="radio" class="radio" name="paymentMethod" class="bankTransfer"></p>
-            <p>BLIK<input type="radio" name="paymentMethod" class="radio" class="blik"></p>
+            <p>BLIK<input type="radio" name="paymentMethod" class="radio" class="blik"></p> -->
             <p>Pole do wprowadzania ewentualnych uwag do zamówienia <input type="text" class="pass" name="comment"> (pole opcjonalne)</p>
-            <input type="submit" class="button" value="Złóż zamówienie!" name="sub_order">
+            <input type="submit" class="button" value="Złóż zamówienie!" name="sub_order"> (płatność przy użyciu Przelewy24)
             </form>
         </div>
         <div class="right">

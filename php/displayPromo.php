@@ -36,7 +36,7 @@
                         <td class='nameTd' style='width:12.5vw; text-align:left;'>$obj->nazwa</td>
                         <td class='buttonTd' style='width:12.5vw; text-align:right;'>";
                         if(isLoggedIn()){
-                            echo "<input id='quantity$obj->id' type='number' max='$zapas' value='1' style='width:25%'><button class='addToCartButton' onclick='addToCart($obj->id)'>Dodaj do koszyka</button>";
+                            echo "<input id='quantity$obj->id' type='number' max='$zapas' min='1' value='1' style='width:25%'><button class='addToCartButton' onclick='addToCart($obj->id)'>Dodaj do koszyka</button>";
                         }else{
                             echo "<button class='addToCartButton' disabled>Zaloguj się aby dodać do koszyka</button>";
                         }

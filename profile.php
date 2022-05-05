@@ -27,18 +27,15 @@
         </div>
         <br><br><div class="left" style="clear: both;">
         <h3><a href="./php/logoff.php">Wyloguj</a></h3>
-            <h3>Twoje dane:</h3>
-            <p>Login i nazwa:<span name="login"></span> <span name="username"></span></p>
-            <h4>Zmiana nazwy użytkownika:</h4>
-            <form action="profile.php" method="">
-                <p>Podaj starą nazwę użytkownika: </p><input type="text" class="pass" name="old_username">
-                <p>Podaj hasło: </p><input type="text" class="pass" name="current_password">
-                <p>Podaj nową nazwę użytkownika: </p><input type="text" class="pass" name="new_username">
-                <p><input type="submit" class="button" name="change_username" value="Zmień nazwę użytkownika"></p>
-            </form>
+        <h2>Witaj <span name="username"><?php
+            require './php/dbaccess.php';
+            $conn = new mysqli($adr,$usr,$pwd,$db);
+            echo $conn->query("SELECT `nazwa` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->nazwa;
+            $conn->close();
+            ?></span> <sub name="login">(<?php echo $_SESSION['login']?>)</sub></h2>
+            <h3>Ustawienia:</h3>
             <h4>Zmiana hasła użytkownika:</h4>
-            <form action="profile.php" method="">
-                <p>Podaj nazwę użytkownika: </p><input type="text"id="pass" name="username">
+            <form action="profile.php" method="POST">
                 <p>Podaj stare hasło: </p><input type="text" class="pass" name="current_password">
                 <p>Podaj nowe hasło: </p><input type="text" class="pass" name="new_password1">
                 <p>Potwierdź nowe hasło: </p><input type="text" class="pass" name="new_password2">
@@ -50,15 +47,6 @@
             <ul>
                 <li></li>
             </ul>
-            <h3>Usuwanie konta</h3>
-            <form action="profile.php" method="">
-                <p>Podaj nazwę użytkownika: </p><input type="text" class="pass" name="username">
-                <p>Podaj hasło: </p><input type="text" class="pass" name="current_password1">
-                <p>Podaj ponownie hasło: </p><input type="text" class="pass" name="current_password2">
-                <p>Potwierdź chęć usunięcia konta: </p><input type="checkbox" name="confirm_deleting_account">
-                <h4>UWAGA! Tej operacji <b>NIE DA SIĘ</b> cofnąć!!!</h4>
-                <p><input type="submit" class="button" name="delete_account" value="Usuń bezpowrotnie konto"></p>
-            </form>
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
