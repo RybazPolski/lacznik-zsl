@@ -45,5 +45,13 @@
     <marquee behavior="scroll" direction="right" class="plywtekst">lacznik-zsl.pl</marquee>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/updateCart.js"></script>
+    <script>
+        var msg = new URL(window.location.href).searchParams.get('msg')
+        if(msg!=null){
+            alert(msg)
+        }
+        
+
+    </script>
 </body>
 </html>
