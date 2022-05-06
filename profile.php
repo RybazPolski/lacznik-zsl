@@ -41,6 +41,7 @@
                 <p>Podaj nowe hasło: </p><input type="text" class="pass" name="new_password1">
                 <p>Potwierdź nowe hasło: </p><input type="text" class="pass" name="new_password2">
                 <p><input type="submit" class="button" name="change_password" value="Zmień hasło"></p>
+<<<<<<< HEAD
             </form>
             <h4>Zmiana nazwy użytkownika:</h4>
             <form action="profile.php" method="POST">
@@ -48,6 +49,8 @@
                 <p>Podaj nową nazwę użytkownika: </p><input type="text" name="new_username">
                 <p>Podaj hasło: </p><input type="text" name="current_password">
                 <p><input type="submit" class="button" name="change_username" value="Zmień nazwę użytkownika"></p>
+=======
+>>>>>>> 4884ffec37c884471f7f528ef7a18378398f532c
             </form>
         </div>
         <div class="right">
