@@ -27,6 +27,14 @@
         <br><br><div class="left" style="clear: both;">
             <h3>O nas:</h3>
             <p>(...)</p>
+            <h4>Lokalizacja naszego bufetu na mapie:</h4>
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=16.943618953228%2C52.42406212235238%2C16.94887608289719%2C52.42612298594392&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+            <br/><small><a href="https://www.openstreetmap.org/#map=19/52.42509/16.94625">Wyświetl większą mapę</a></small>
+            <h4>Możliwości dojazdu do naszego bufetu: </h4>
+            <ul>
+                <li>Linie autobusowe: 167, 174, 190, 911</li>
+                <li>Linia tramwajowa: 10</li>
+            </ul>
         </div>
         <div class="right">
             <h3>Informacje o naszej firmie:</h3>
