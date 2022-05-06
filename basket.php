@@ -1,3 +1,4 @@
+<?php $phpPath='./php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,39 +9,27 @@
     <title>Łącznik Online - Twój koszyk</title>
 </head>
 <body>
-    <div id="main">
-        <div id="baner">
+    <div class="main">
+        <div class="baner">
+            <img src="zsl-logo.png" class="logo">
+            <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" - Twój koszyk</h1>
         </div>
-        <div id="main_menu">
-            <div id="menu"><a href="index.php">Strona główna</a></div>
-            <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div id="menu"><a href="basket.php">Koszyk</a></div>
-            <div id="menu"><a href="profile.php">Twój profil</a></div>
-            <div id="menu"><a href="products.php">Nasze produkty</a></div>
-            <div id="menu"><a href="menu.php">Nasze menu</a></div>
+        <div class="main_menu">
+        <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
+            <div class="menu"><a href="menu.php">Nasze menu</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <?php require "$phpPath/profileOrLogin.php"; 
+            if(!isLoggedIn()){
+                header('Location: user.php?loginError=Zaloguj się aby dodać coś do koszyka!');
+            }?>
         </div>
-        <div id="left">
+        <br><br><div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
-            <form action="" method="">
-            <ol>
-                <li></li><input type="number" name="amount1" min="1">
-                <li></li><input type="number" name="amount2" min="1">
-                <li></li><input type="number" name="amount3" min="1">
-            </ol>
-            <p>Suma do zapłaty: <span name="payment"></span></p>
-            <h3>Wybierz metodę płatności</h3>
-            <p>Przy odbiorze<input type="radio" name="paymentMethod" id="collection"></p>
-            <p>Przelew tradycyjny<input type="radio" name="paymentMethod" id="bankTransfer"></p>
-            <p>BLIK<input type="radio" name="paymentMethod" id="blik"></p>
-            <p>Pole do wprowadzania ewentualnych uwag do zamówienia <input type="text" name="comment"> (pole opcjonalne)</p>
-            <input type="submit" value="Złóż zamówienie!" name="sub_order">
-            </form>
+            <?php require "./php/displayCart.php" ?>
         </div>
-        <div id="right">
-            <h3>(...)</h3>
-        </div>
-        <div id="footer">
+        <div class="footer">
             <h4>Autorzy:</h4>
             <ul>
                 <li>Julian Rybarczyk</li>
@@ -50,9 +39,11 @@
             </ul>
             <h4>Źródła (dla strony koszyka):</h4>
             <ul>
-
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" class="plywtekst">lacznik-zsl.pl</marquee>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/updateCart.js"></script>
 </body>
 </html>

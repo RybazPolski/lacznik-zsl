@@ -1,3 +1,4 @@
+<?php $phpPath='./php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,20 +9,24 @@
     <title>Łącznik Online - strona naszego menu</title>
 </head>
 <body>
-    <div id="main">
-        <div id="baner">
+    <div class="main">
+        <div class="baner">
+        <img src="zsl-logo.png" class="logo">
+        <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" - nasze menu</h1>
         </div>
-        <div id="main_menu">
-            <div id="menu"><a href="index.php">Strona główna</a></div>
-            <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div id="menu"><a href="basket.php">Koszyk</a></div>
-            <div id="menu"><a href="profile.php">Twój profil</a></div>
-            <div id="menu"><a href="products.php">Nasze produkty</a></div>
-            <div id="menu"><a href="menu.php">Nasze menu</a></div>
+        <div class="main_menu">
+            <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
+            <div class="menu"><a href="menu.php">Nasze menu</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
-        <div id="left">
-            <h3>Nasze menu</h3>
+        <br><br><div class="left" style="clear: both;">
+
+            <?php require './php/displayMenu.php' ?>
+
+            <!-- <h3>Nasze menu</h3>
             <h4>Kotlet mielony z ziemniakami</h4>
             <img src="" alt="Kotlet mielony z ziemniakami">
             <p>(...)</p>
@@ -35,13 +40,13 @@
             <img src="" alt="Panierowany filet z kurczaka z ziemniakami">
             <p>(...)</p>
         </div>
-        <div id="right">
+        <div class="right">
             <h3>Aktualnie w promocji!</h3>
             <h4>(...)</h4>
             <img src="" alt="(...)">
             <p>(...)</p>
-        </div>
-        <div id="footer">
+        </div> -->
+        <div class="footer">
             <h4>Autorzy:</h4>
             <ul>
                 <li>Julian Rybarczyk</li>
@@ -55,5 +60,6 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p>lacznik-zsl.pl</p></marquee>
 </body>
 </html>

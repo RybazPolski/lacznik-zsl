@@ -1,3 +1,4 @@
+<?php $phpPath='./php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,40 +9,28 @@
     <title>Łącznik Online - lista naszych produktów</title>
 </head>
 <body>
-    <div id="main">
-        <div id="baner">
+    <div class="main">
+        <div class="baner">
+        <img src="zsl-logo.png" class="logo">
+        <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" - nasze produkty</h1>
         </div>
-        <div id="main_menu">
-            <div id="menu"><a href="index.php">Strona główna</a></div>
-            <div id="menu"><a href="user.php">Logowanie/Rejestracja</a></div>
-            <div id="menu"><a href="basket.php">Koszyk</a></div>
-            <div id="menu"><a href="profile.php">Twój profil</a></div>
-            <div id="menu"><a href="products.php">Nasze produkty</a></div>
-            <div id="menu"><a href="menu.php">Nasze menu</a></div>
+        <div class="main_menu">
+            <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
+            <div class="menu"><a href="menu.php">Nasze menu</a></div>
+            <div class="menu"><a href="products.php">Nasze produkty</a></div>
+            <div class="menu"><a href="basket.php">Koszyk</a></div>
+            <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
-        <div id="left">
-            <h3>Nasze produkty</h3>
-            <h4>Snickers</h4>
-            <img src="" alt="Snickers">
-            <p>(...)</p>
-            <h4>Żeton pierwsze danie</h4>
-            <img src="" alt="Żeton pierwsze danie">
-            <p>(...)</p>
-            <h4>Żeton drugie danie</h4>
-            <img src="" alt="Żeton drugie danie">
-            <p>(...)</p>
-            <h4>Żeton drugie danie z surówką</h4>
-            <img src="" alt="Żeton drugie danie z surówką">
-            <p>(...)</p>
+        <br><br><div class="left" style="clear: both;">
+            <h2>Aktualnie w promocji!</h2>
+            <?php require './php/displayPromo.php' ?>    
         </div>
-        <div id="right">
-            <h3>Aktualnie w promocji!</h3>
-            <h4>(...)</h4>
-            <img src="" alt="(...)">
-            <p>(...)</p>
+        <div class="right">
+            <h2>Wszystkie produkty</h2>
+            <?php require './php/displayProducts.php' ?>
         </div>
-        <div id="footer">
+        <div class="footer">
             <h4>Autorzy:</h4>
             <ul>
                 <li>Julian Rybarczyk</li>
@@ -55,5 +44,8 @@
             </ul>
         </div>
     </div>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p>lacznik-zsl.pl</p></marquee>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/addToCart.js"></script>
 </body>
 </html>
