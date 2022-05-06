@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Maj 2022, 20:07
+-- Czas generowania: 06 Maj 2022, 14:11
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 7.4.29
 
@@ -63,7 +63,8 @@ CREATE TABLE `klienci` (
 
 INSERT INTO `klienci` (`id`, `login`, `haslo`, `nazwa`) VALUES
 (1, 'test', 'Niezgadniesz', 'Stefan'),
-(2, 'dwa', '1234', 'Hermenegilda');
+(2, 'dwa', '1234', 'Hermenegilda'),
+(3, 'User', '*2E91BC4944863EF5544D42B70FDBBA7B2BCC090B', 'Jan Iksiński');
 
 -- --------------------------------------------------------
 
@@ -77,6 +78,13 @@ CREATE TABLE `koszyk` (
   `id_p` int(11) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `koszyk`
+--
+
+INSERT INTO `koszyk` (`id`, `id_k`, `id_p`, `ilosc`) VALUES
+(17, 3, 4, 7);
 
 -- --------------------------------------------------------
 
@@ -138,7 +146,8 @@ CREATE TABLE `zamowienia` (
   `data` date DEFAULT NULL,
   `odebrano` enum('tak','nie') DEFAULT NULL,
   `anulowano` enum('tak','nie') DEFAULT NULL,
-  `uwagi` text NOT NULL
+  `uwagi` text NOT NULL,
+  `koszt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -214,13 +223,13 @@ ALTER TABLE `administracja`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Żeby dało się modyfikować w phpMyAdmin';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Żeby dało się modyfikować w phpMyAdmin', AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `menu`

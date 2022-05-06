@@ -13,6 +13,13 @@
 
     $id_p = htmlentities($_POST['id'],ENT_QUOTES);
     $n =  htmlentities($_POST['n'],ENT_QUOTES);
+    if($n<0){
+        echo json_encode([
+            'success' => false,
+            'error' => "EJEJEJ! Liczba produktów nie może być ujemna. To Ty nam płacisz, a nie my Tobie! :P"
+        ]);
+        exit();
+    }
 
     require './dbaccess.php';
     $conn = new mysqli($adr,$usr,$pwd,$db);
