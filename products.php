@@ -14,6 +14,8 @@
         <img src="zsl-logo.png" class="logo">
         <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" - nasze produkty</h1>
+            <h3 id="dateParagraph"></h3>
+            <script src="js/date.js"></script>
         </div>
         <div class="main_menu">
             <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>

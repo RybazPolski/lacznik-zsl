@@ -14,6 +14,8 @@
         <img src="zsl-logo.png" class="logo">
         <img src="bufet-lacznik-blue.png" class="logo2">
             <h1>Bufet "Łącznik" - Twój profil</h1>
+            <h3 id="dateParagraph"></h3>
+            <script src="js/date.js"></script>
         </div>
         <div class="main_menu">
             <div class="menu"><a class="napis" href="index.php">Strona główna</a></div>
@@ -44,7 +46,7 @@
             </form>
             <h4>Zmiana nazwy użytkownika:</h4>
             <form action="profile.php" method="POST">
-                <p>Podaj starą nazwę użytkownika </p><input type="text" name="old_username">
+                <p>Podaj starą nazwę użytkownika: </p><input type="text" name="old_username">
                 <p>Podaj nową nazwę użytkownika: </p><input type="text" name="new_username">
                 <p>Podaj hasło: </p><input type="password" name="current_password">
                 <p><input type="submit" class="button" name="change_username" value="Zmień nazwę użytkownika"></p>
