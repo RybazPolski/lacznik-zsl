@@ -1,6 +1,6 @@
 <?php
     if(!isset($phpPath)){$phpPath = ".";}
-    include "$phpPath/essentials.php";
+    require "$phpPath/essentials.php";
     if(isLoggedIn()){
         echo '<div class="menu"><a href="profile.php">Twój profil</a></div>';
     }else{

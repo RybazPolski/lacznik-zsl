@@ -20,7 +20,7 @@
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <?php include "$phpPath/profileOrLogin.php"; 
+            <?php require "$phpPath/profileOrLogin.php"; 
                 if(isLoggedIn()){
                     header('Location: profile.php');
                 }

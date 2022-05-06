@@ -20,11 +20,11 @@
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <?php include "$phpPath/profileOrLogin.php"; ?>
+            <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
 
-            <?php include './php/displayMenu.php' ?>
+            <?php require './php/displayMenu.php' ?>
 
             <!-- <h3>Nasze menu</h3>
             <h4>Kotlet mielony z ziemniakami</h4>

@@ -14,7 +14,7 @@ var updateCart = (id)=>{
                 for(el of document.getElementsByClassName('partPrice')){
                     payment = payment+parseFloat(el.innerHTML)
                 }
-                document.getElementById('payment').innerHTML=payment
+                document.getElementById('payment').innerHTML= `${payment}zł`
             }else{
                 alert(result.error)
                 if(result.newAmount!=undefined){

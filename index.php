@@ -20,7 +20,7 @@
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <?php include "$phpPath/profileOrLogin.php"; ?>
+            <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
             <h3>O nas:</h3>

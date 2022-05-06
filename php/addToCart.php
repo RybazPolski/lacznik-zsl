@@ -1,5 +1,5 @@
 <?php
-    include './essentials.php';
+    require './essentials.php';
     session_start();
     if(isLoggedIn()){
         $login = $_SESSION['login'];
@@ -14,7 +14,7 @@
     $id_p = htmlentities($_POST['id'],ENT_QUOTES);
     $n =  htmlentities($_POST['n'],ENT_QUOTES);
 
-    include './dbaccess.php';
+    require './dbaccess.php';
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $conn->set_charset("utf8mb4");
     

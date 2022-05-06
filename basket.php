@@ -20,18 +20,14 @@
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <?php include "$phpPath/profileOrLogin.php"; 
+            <?php require "$phpPath/profileOrLogin.php"; 
             if(!isLoggedIn()){
-                header('Location: user.php');
+                header('Location: user.php?loginError=Zaloguj się aby dodać coś do koszyka!');
             }?>
         </div>
         <br><br><div class="left" style="clear: both;">
             <h3>Zawartość Twojego koszyka</h3>
             <?php require "./php/displayCart.php" ?>
-            <!-- <h3>Wybierz metodę płatności</h3>
-            <p>Przy odbiorze<input type="radio" class="radio" name="paymentMethod" class="collection"></p>
-            <p>Przelew tradycyjny<input type="radio" class="radio" name="paymentMethod" class="bankTransfer"></p>
-            <p>BLIK<input type="radio" name="paymentMethod" class="radio" class="blik"></p> -->            
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
@@ -43,7 +39,6 @@
             </ul>
             <h4>Źródła (dla strony koszyka):</h4>
             <ul>
-
             </ul>
         </div>
     </div>

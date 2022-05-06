@@ -20,15 +20,15 @@
             <div class="menu"><a href="menu.php">Nasze menu</a></div>
             <div class="menu"><a href="products.php">Nasze produkty</a></div>
             <div class="menu"><a href="basket.php">Koszyk</a></div>
-            <?php include "$phpPath/profileOrLogin.php"; ?>
+            <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
             <h2>Aktualnie w promocji!</h2>
-            <?php include './php/displayPromo.php' ?>    
+            <?php require './php/displayPromo.php' ?>    
         </div>
         <div class="right">
             <h2>Wszystkie produkty</h2>
-            <?php include './php/displayProducts.php' ?>
+            <?php require './php/displayProducts.php' ?>
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
