@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Maj 2022, 14:11
+-- Czas generowania: 07 Maj 2022, 19:53
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 7.4.29
 
@@ -54,17 +54,18 @@ CREATE TABLE `klienci` (
   `id` int(11) NOT NULL,
   `login` varchar(16) NOT NULL,
   `haslo` varchar(41) NOT NULL,
-  `nazwa` varchar(48) DEFAULT NULL
+  `imie` varchar(48) DEFAULT NULL,
+  `nazwisko` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `klienci`
 --
 
-INSERT INTO `klienci` (`id`, `login`, `haslo`, `nazwa`) VALUES
-(1, 'test', 'Niezgadniesz', 'Stefan'),
-(2, 'dwa', '1234', 'Hermenegilda'),
-(3, 'User', '*2E91BC4944863EF5544D42B70FDBBA7B2BCC090B', 'Jan Iksiński');
+INSERT INTO `klienci` (`id`, `login`, `haslo`, `imie`, `nazwisko`) VALUES
+(1, 'test', 'Niezgadniesz', 'Stefan', 'Burczymucha'),
+(2, 'dwa', '1234', 'Hermenegilda', 'Kociubińska'),
+(3, 'User', '*2E91BC4944863EF5544D42B70FDBBA7B2BCC090B', 'Jan ', 'Iksiński');
 
 -- --------------------------------------------------------
 

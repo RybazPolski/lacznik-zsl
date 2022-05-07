@@ -42,7 +42,8 @@
             <h3>Rejestracja nowego konta:</h3>
             <form action="./php/register.php" method="POST">
                 <label for="login">Login:<span style="color:red;">*</span> </label><br><input type="text" class="pass" name="login" required><br>
-                <label for="username">Nazwa profilu:<sub>(możesz później ją zmienić)</sub></label><br><input type="text" class="pass" name="username"><br>
+                <label for="name">Imię:<span style="color:red;">*</span></label><br><input type="text" class="pass" name="name" required><br>
+                <label for="surname">Nazwisko:<span style="color:red;">*</span></label><br><input type="text" class="pass" name="surname" required><br>
                 <label for="pass">Hasło:<span style="color:red;">*</span> </label><br><input type="password" name="pass" class="pass" required><br>
                 <label for="pass2">Powtórz hasło:<span style="color:red;">*</span><sub>(wiem, irytujące ale trzeba)</sub> </label><br><input type="password" class="pass" name="pass2" required><br>
                 <span style="color:red;" class="error"><?php displayFromGET('registerError'); ?></span><br>

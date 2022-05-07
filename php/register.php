@@ -38,6 +38,14 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         header('Location: ../user.php?registerError=Nazwa może zawierać tylko litery, cyfry oraz "_"! (bez polskich znaków)');
         exit();
     };
+    if(!checkInput("name","POST")){
+        header('Location: ../user.php?registerError=Podaj imię.');
+        exit();
+    };
+    if(!checkInput("surname","POST")){
+        header('Location: ../user.php?registerError=Podaj nazwisko.');
+        exit();
+    };
 
     require "dbaccess.php";
     $conn = new mysqli($adr,$usr,$pwd,$db);
@@ -49,7 +57,8 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
     $res = $conn->query($q);
     if($res->num_rows!=1){
         $pass = htmlentities($_POST['pass'], ENT_QUOTES);
-        $username = checkInput("username","POST") ? htmlentities($_POST['username'], ENT_QUOTES) : $login; 
+        $name =  htmlentities($_POST['name'], ENT_QUOTES); 
+        $surname = htmlentities($_POST['surname'], ENT_QUOTES);
         echo "<br>$login<br>$username<br>$pass<br>";
         $pass = hash("md5",$pass);
         
@@ -58,7 +67,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         $_SESSION['password'] = $pass;
         $_SESSION['authorized'] = true;
 
-        $q = "INSERT INTO `klienci`(`login`,`nazwa`,`haslo`) VALUES ('$login','$username',PASSWORD('$pass'))";
+        $q = "INSERT INTO `klienci`(`login`,`imie`,`nazwisko`,`haslo`) VALUES ('$login','$name','$surname',PASSWORD('$pass'))";
         if($conn->query($q)){
             $conn->close();
             header("Location: ../profile.php");

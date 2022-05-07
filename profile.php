@@ -33,30 +33,28 @@
             require './php/dbaccess.php';
             $conn = new mysqli($adr,$usr,$pwd,$db);
             $conn->set_charset("utf8mb4");
-            echo $conn->query("SELECT `nazwa` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->nazwa;
+            echo $conn->query("SELECT CONCAT(`imie`,' ',`nazwisko`) AS `nazwa` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->nazwa;
             $conn->close();
             ?></span> <sub name="login">(<?php echo $_SESSION['login']?>)</sub></h2>
             <h3>Ustawienia:</h3>
+            <h4>Zmiana loginu:</h4>
+            <form action="profile.php" method="POST">
+                <p>Podaj stary login: </p><input type="text" name="old_login" required>
+                <p>Podaj nowy login: </p><input type="text" name="new_login" required>
+                <p>Podaj hasło: </p><input type="password" name="current_password" required>
+                <p><input type="submit" class="button" name="change_username" value="Zmień login"></p>
+            </form>
             <h4>Zmiana hasła użytkownika:</h4>
             <form action="profile.php" method="POST">
-                <p>Podaj stare hasło: </p><input type="password" class="pass" name="current_password">
-                <p>Podaj nowe hasło: </p><input type="password" class="pass" name="new_password1">
-                <p>Potwierdź nowe hasło: </p><input type="password" class="pass" name="new_password2">
+                <p>Podaj stare hasło: </p><input type="password" class="pass" name="current_password" required>
+                <p>Podaj nowe hasło: </p><input type="password" class="pass" name="new_password1" required>
+                <p>Potwierdź nowe hasło: </p><input type="password" class="pass" name="new_password2" required>
                 <p><input type="submit" class="button" name="change_password" value="Zmień hasło"></p>
-            </form>
-            <h4>Zmiana nazwy użytkownika:</h4>
-            <form action="profile.php" method="POST">
-                <p>Podaj starą nazwę użytkownika: </p><input type="text" name="old_username">
-                <p>Podaj nową nazwę użytkownika: </p><input type="text" name="new_username">
-                <p>Podaj hasło: </p><input type="password" name="current_password">
-                <p><input type="submit" class="button" name="change_username" value="Zmień nazwę użytkownika"></p>
             </form>
         </div>
         <div class="right">
             <h3>Lista dokonanych zamówień/zakupów w naszym przedsiębiorstwie dla konta: <span name="username"></span></h3>
-            <ul>
-                <li></li>
-            </ul>
+            <?php require "$phpPath/displayOrders.php";?>
         </div>
         <div class="footer">
             <h4>Autorzy:</h4>
