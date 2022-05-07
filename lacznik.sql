@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Maj 2022, 19:53
+-- Czas generowania: 07 Maj 2022, 21:31
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 7.4.29
 
@@ -65,7 +65,8 @@ CREATE TABLE `klienci` (
 INSERT INTO `klienci` (`id`, `login`, `haslo`, `imie`, `nazwisko`) VALUES
 (1, 'test', 'Niezgadniesz', 'Stefan', 'Burczymucha'),
 (2, 'dwa', '1234', 'Hermenegilda', 'Kociubińska'),
-(3, 'User', '*2E91BC4944863EF5544D42B70FDBBA7B2BCC090B', 'Jan ', 'Iksiński');
+(3, 'User', '*2E91BC4944863EF5544D42B70FDBBA7B2BCC090B', 'Jan ', 'Iksiński'),
+(4, 'dudek', '*2688026025842C926CE5E850B45AD5EDCC1EB577', 'Andrzej', 'Duda');
 
 -- --------------------------------------------------------
 
@@ -74,18 +75,11 @@ INSERT INTO `klienci` (`id`, `login`, `haslo`, `imie`, `nazwisko`) VALUES
 --
 
 CREATE TABLE `koszyk` (
-  `id` int(11) NOT NULL COMMENT 'Żeby dało się modyfikować w phpMyAdmin',
+  `id` int(11) NOT NULL,
   `id_k` int(11) DEFAULT NULL,
   `id_p` int(11) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `koszyk`
---
-
-INSERT INTO `koszyk` (`id`, `id_k`, `id_p`, `ilosc`) VALUES
-(17, 3, 4, 7);
 
 -- --------------------------------------------------------
 
@@ -130,10 +124,10 @@ CREATE TABLE `produkty` (
 --
 
 INSERT INTO `produkty` (`id`, `nazwa`, `cena`, `zapas`, `promocja`, `zdjecie`) VALUES
-(1, 'zeton pierwsze danie', 5, 100, 0, 'zupa'),
+(1, 'zeton pierwsze danie', 5, 99, 0, 'zupa'),
 (2, 'zeton drugie danie', 8, 50, 0, 'danie'),
 (3, 'zeton drugie danie z sur', 10, 50, 0, 'daniesur'),
-(4, 'snickers', 5, 10, 20, 'snickers');
+(4, 'snickers', 5, 9, 20, 'snickers');
 
 -- --------------------------------------------------------
 
@@ -148,7 +142,8 @@ CREATE TABLE `zamowienia` (
   `odebrano` enum('tak','nie') DEFAULT NULL,
   `anulowano` enum('tak','nie') DEFAULT NULL,
   `uwagi` text NOT NULL,
-  `koszt` float NOT NULL
+  `koszt` float NOT NULL,
+  `kod_odbioru` char(4) NOT NULL DEFAULT substr(rand(),3,4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -224,13 +219,13 @@ ALTER TABLE `administracja`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Żeby dało się modyfikować w phpMyAdmin', AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT dla tabeli `menu`
