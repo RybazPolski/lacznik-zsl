@@ -3,7 +3,7 @@
     $fullPrice = 0;
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $conn->set_charset("utf8mb4");
-    $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->id;            
+    $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".htmlentities($_SESSION['login'],ENT_QUOTES)."' AND `haslo`=PASSWORD('".htmlentities($_SESSION['password'],ENT_QUOTES)."')")->fetch_object()->id;            
     $res = $conn->query("SELECT * FROM `koszyk` WHERE `id_k`=$id_k");
     if($res->num_rows==0){
         echo "Twój koszyk jest pusty.<br><a href='./products.php' style='color:black'>Zmieńmy to!</a>";

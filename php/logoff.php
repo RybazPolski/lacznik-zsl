@@ -9,6 +9,6 @@
     setcookie('remember', false, time()-1000, '/');
     setcookie('login', null, time()-1000, '/');
     setcookie('password', null, time()-1000, '/');
-    header('Location: ../index.php');
+    header('Location: ../user.php?loginError=Wylogowano. Zaloguj się ponownie');
     exit();
 ?>

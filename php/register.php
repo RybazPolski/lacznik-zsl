@@ -35,7 +35,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
         exit();
     };
     if(preg_match_all('/[^A-Za-z0-9_]/', $_POST['login'])){
-        header('Location: ../user.php?registerError=Nazwa może zawierać tylko litery, cyfry oraz "_"! (bez polskich znaków)');
+        header('Location: ../user.php?registerError=Login może zawierać tylko litery, cyfry oraz "_"! (bez polskich znaków)');
         exit();
     };
     if(!checkInput("name","POST")){

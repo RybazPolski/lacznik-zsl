@@ -25,7 +25,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')){
             setcookie('password',$pass, time() + (86400 * 365), "/");
         }
         $conn->close();
-        header("Location: ../index.php");
+        header("Location: ../profile.php");
         exit();
     }else{
         $conn->close();

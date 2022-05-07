@@ -38,17 +38,19 @@
             ?></span> <sub name="login">(<?php echo $_SESSION['login']?>)</sub></h2>
             <h3>Ustawienia:</h3>
             <h4>Zmiana loginu:</h4>
-            <form action="profile.php" method="POST">
+            <form action="php/changeLogin.php" method="POST">
                 <p>Podaj stary login: </p><input type="text" name="old_login" required>
                 <p>Podaj nowy login: </p><input type="text" name="new_login" required>
                 <p>Podaj hasło: </p><input type="password" name="current_password" required>
+                <br><span style="color:red;" class="error"><?php displayFromGET('loginChangeError'); ?></span><br>
                 <p><input type="submit" class="button" name="change_username" value="Zmień login"></p>
             </form>
             <h4>Zmiana hasła użytkownika:</h4>
-            <form action="profile.php" method="POST">
+            <form action="php/changePass.php" method="POST">
                 <p>Podaj stare hasło: </p><input type="password" class="pass" name="current_password" required>
                 <p>Podaj nowe hasło: </p><input type="password" class="pass" name="new_password1" required>
                 <p>Potwierdź nowe hasło: </p><input type="password" class="pass" name="new_password2" required>
+                <br><span style="color:red;" class="error"><?php displayFromGET('passError'); ?></span><br>
                 <p><input type="submit" class="button" name="change_password" value="Zmień hasło"></p>
             </form>
         </div>

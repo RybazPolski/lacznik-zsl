@@ -6,7 +6,7 @@
     while($obj = $res->fetch_object()){
         
         if(isLoggedIn()){
-            $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->id;            
+            $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".htmlentities($_SESSION['login'],ENT_QUOTES)."' AND `haslo`=PASSWORD('".htmlentities($_SESSION['password'],ENT_QUOTES)."')")->fetch_object()->id;            
             $res1 = $conn->query("SELECT * FROM `koszyk` WHERE `id_p`=$obj->id AND `id_k`=$id_k");
             if($res1->num_rows==1){
                 $inBasket = $res1->fetch_object()->ilosc;

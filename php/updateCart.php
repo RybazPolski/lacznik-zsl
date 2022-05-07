@@ -3,8 +3,8 @@
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $conn->set_charset("utf8mb4");
     session_start();
-    $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".$_SESSION['login']."' AND `haslo`=PASSWORD('".$_SESSION['password']."')")->fetch_object()->id;            
-    
+    $id_k = $conn->query("SELECT `id` FROM `klienci` WHERE `login`='".htmlentities($_SESSION['login'],ENT_QUOTES)."' AND `haslo`=PASSWORD('".htmlentities($_SESSION['password'],ENT_QUOTES)."')")->fetch_object()->id;            
+
     $id = htmlentities($_POST['id'],ENT_QUOTES);
     $newVal = htmlentities($_POST['newVal'],ENT_QUOTES);
 
