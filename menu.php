@@ -25,7 +25,10 @@
             <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
-
+            <form action="menu.php" method="POST">
+                <p>Wpisz wyszukiwany produkt z menu: <input type="text" name="menuQuery"></p>
+                <input type="submit" value="Szukaj">
+            </form>
             <?php require './php/displayMenu.php' ?>
 
             <!-- <h3>Nasze menu</h3>
