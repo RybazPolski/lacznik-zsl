@@ -25,8 +25,10 @@
             <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
-            <form action="products.php" method="POST">
-                <p>Wpisz wyszukiwany produkt: <input type="text" name="productQuery"></p>
+            <form action="products.php" method="GET">
+                <p>Wpisz wyszukiwany produkt: <input type="text" name="productQuery" value="<?php
+                if(isset($_GET['productQuery'])&&!empty($_GET['productQuery'])) echo htmlentities($_GET['productQuery'],ENT_QUOTES);
+                ?>"></p>
                 <input type="submit" value="Szukaj">
             </form>
             <h2>Aktualnie w promocji!</h2>

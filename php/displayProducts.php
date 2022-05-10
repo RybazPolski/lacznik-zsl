@@ -1,9 +1,10 @@
 <?php
     require "$phpPath/dbaccess.php";
-    // require 'essentials.php';
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $conn->set_charset("utf8mb4");
-    $res = $conn->query("SELECT * FROM `produkty`");
+    $and = (isset($_GET['productQuery'])&&!empty($_GET['productQuery'])) ? " WHERE `nazwa` LIKE '%".htmlentities(convertSpecialChars($_GET['productQuery']),ENT_QUOTES)."%'"  : "";
+    $res = $conn->query("SELECT * FROM `produkty`$and");
+    
     while($obj = $res->fetch_object()){
 
         if(isLoggedIn()){

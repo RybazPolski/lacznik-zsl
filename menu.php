@@ -25,8 +25,10 @@
             <?php require "$phpPath/profileOrLogin.php"; ?>
         </div>
         <br><br><div class="left" style="clear: both;">
-            <form action="menu.php" method="POST">
-                <p>Wpisz wyszukiwany produkt z menu: <input type="text" name="menuQuery"></p>
+            <form action="menu.php" method="GET">
+                <p>Wpisz wyszukiwany produkt z menu: <input type="text" name="menuQuery" value="<?php
+                if(isset($_GET['menuQuery'])&&!empty($_GET['menuQuery'])) echo htmlentities($_GET['menuQuery'],ENT_QUOTES);
+                ?>"></p>
                 <input type="submit" value="Szukaj">
             </form>
             <?php require './php/displayMenu.php' ?>
