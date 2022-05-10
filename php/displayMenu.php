@@ -6,7 +6,7 @@
     $res = $conn->query("SELECT * FROM `menu` WHERE `danie`=1$and");
     echo "<h2>Zupy</h2><ul>";
     if($res->num_rows==0){
-        echo "<h3>Nie znaleziono.</h3>";
+        echo "Nie znaleziono dania.";
     }else{
         while($obj = $res->fetch_object()){
             echo "<li>$obj->nazwa</li>";
@@ -15,7 +15,7 @@
     $res = $conn->query("SELECT * FROM `menu` WHERE `danie`=2$and");
     echo "</ul><h2>Dania główne</h2><ul>";
     if($res->num_rows==0){
-        echo "<h3>Nie znaleziono.</h3>";
+        echo "Nie znaleziono dania.";
     }else{
         while($obj = $res->fetch_object()){
             echo "<li>$obj->nazwa</li>";

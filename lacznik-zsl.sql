@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Maj 2022, 19:20
+-- Czas generowania: 10 Maj 2022, 21:33
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 7.4.29
 
@@ -31,18 +31,19 @@ CREATE TABLE `administracja` (
   `ID` int(11) NOT NULL,
   `login` varchar(16) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `haslo` varchar(41) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `nazwa` varchar(48) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `imie` varchar(48) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `nazwisko` varchar(64) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Zrzut danych tabeli `administracja`
 --
 
-INSERT INTO `administracja` (`ID`, `login`, `haslo`, `nazwa`) VALUES
-(1, 'Pioxini', '********', 'Piotr'),
-(2, 'jj22', 'NiePowiem', 'Jacek'),
-(3, 'Renia', 'haslo', 'Renata'),
-(4, 'RybazPolski', 'haslasapodwojniehashowane', 'Ryba');
+INSERT INTO `administracja` (`ID`, `login`, `haslo`, `imie`, `nazwisko`) VALUES
+(1, 'Pioxini', '*F174D579781997DB106A7379BA0A848F381F89CE', 'Piotr', ''),
+(2, 'jj22', '*FCCBF7B9CF356FCEB2DAC784FA3D54C41A02A715', 'Jacek', ''),
+(3, 'Renia', '*D59B2B33826377D3982410A3C85ABD1C00837CA5', 'Renata', ''),
+(4, 'RybazPolski', '*F86763F3EBC1CA9B9F49F586DB18D7DA9FDEAABE', 'Ryba', '');
 
 -- --------------------------------------------------------
 
@@ -124,10 +125,10 @@ CREATE TABLE `produkty` (
 --
 
 INSERT INTO `produkty` (`id`, `nazwa`, `cena`, `zapas`, `promocja`, `zdjecie`) VALUES
-(1, 'zeton pierwsze danie', 5, 97, 0, 'zupa'),
-(2, 'zeton drugie danie', 8, 47, 0, 'danie'),
-(3, 'zeton drugie danie z sur', 10, 48, 0, 'daniesur'),
-(4, 'snickers', 5, 7, 20, 'snickers');
+(1, 'zeton pierwsze danie', 5, 100, 0, 'zupa'),
+(2, 'zeton drugie danie', 8, 50, 0, 'danie'),
+(3, 'zeton drugie danie z sur', 10, 50, 0, 'daniesur'),
+(4, 'snickers', 5, 9, 0, 'snickers');
 
 -- --------------------------------------------------------
 
@@ -143,17 +144,8 @@ CREATE TABLE `zamowienia` (
   `anulowano` enum('tak','nie') COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `uwagi` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `koszt` float NOT NULL,
-  `kod_odbioru` char(4) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT substr(rand(),3,4)
+  `kod_odbioru` char(10) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT concat(`id_k`,'/',substr(rand(),3,4))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-
---
--- Zrzut danych tabeli `zamowienia`
---
-
-INSERT INTO `zamowienia` (`id`, `id_k`, `data`, `odebrano`, `anulowano`, `uwagi`, `koszt`, `kod_odbioru`) VALUES
-(1, 4, '2022-05-07', 'nie', 'nie', 'Tak', 4, '4670'),
-(2, 4, '2022-05-07', 'nie', 'nie', '', 54, '9532'),
-(3, 4, '2022-05-08', 'nie', 'nie', '', 4, '0120');
 
 -- --------------------------------------------------------
 
@@ -167,17 +159,6 @@ CREATE TABLE `zawartosc` (
   `id_p` int(11) DEFAULT NULL,
   `ilosc` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-
---
--- Zrzut danych tabeli `zawartosc`
---
-
-INSERT INTO `zawartosc` (`id`, `id_z`, `id_p`, `ilosc`) VALUES
-(1, 1, 4, 1),
-(2, 2, 3, 2),
-(3, 2, 2, 3),
-(4, 2, 1, 2),
-(5, 3, 4, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -245,7 +226,7 @@ ALTER TABLE `klienci`
 -- AUTO_INCREMENT dla tabeli `koszyk`
 --
 ALTER TABLE `koszyk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT dla tabeli `menu`
@@ -263,13 +244,13 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `zawartosc`
 --
 ALTER TABLE `zawartosc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -4,7 +4,9 @@
     $conn->set_charset("utf8mb4");
     $and = (isset($_GET['productQuery'])&&!empty($_GET['productQuery'])) ? " WHERE `nazwa` LIKE '%".htmlentities(convertSpecialChars($_GET['productQuery']),ENT_QUOTES)."%'"  : "";
     $res = $conn->query("SELECT * FROM `produkty`$and");
-    
+    if($res->num_rows==0){
+        echo "Nie znaleziono produktu.";
+    };
     while($obj = $res->fetch_object()){
 
         if(isLoggedIn()){

@@ -3,6 +3,9 @@
     $conn = new mysqli($adr,$usr,$pwd,$db);
     $conn->set_charset("utf8mb4");
     $res = $conn->query("SELECT * FROM `produkty` WHERE `promocja`>0");
+    if($res->num_rows==0){
+        echo "Obecnie brak promocji.";
+    };
     while($obj = $res->fetch_object()){
         
         if(isLoggedIn()){
