@@ -20,6 +20,13 @@
         ]);
         exit();
     }
+    if($n==0){
+        echo json_encode([
+            'success' => false,
+            'error' => "Dodano 0 sztuk produktu. Czyli nic :P"
+        ]);
+        exit();
+    }
 
     require './dbaccess.php';
     $conn = new mysqli($adr,$usr,$pwd,$db);
