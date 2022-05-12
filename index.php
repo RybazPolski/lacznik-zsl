@@ -13,7 +13,7 @@
         <div class="baner">
         <img src="zsl-logo.png" class="logo">
         <img src="bufet-lacznik-blue.png" class="logo2">
-            <h1>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</h1>
+            <div class="title"><b>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</b></div>
             <h3 id="dateParagraph"></h3>
             <script src="js/date.js"></script>
         </div>
@@ -28,7 +28,7 @@
             <h3>O nas:</h3>
             <p>(...)</p>
             <h4>Lokalizacja naszego bufetu na mapie:</h4>
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=16.943618953228%2C52.42406212235238%2C16.94887608289719%2C52.42612298594392&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+            <iframe width="385" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=16.943618953228%2C52.42406212235238%2C16.94887608289719%2C52.42612298594392&amp;layer=mapnik" style="border: 1px solid black"></iframe>
             <br/><small><a href="https://www.openstreetmap.org/#map=19/52.42509/16.94625">Wyświetl większą mapę</a></small>
             <h4>Możliwości dojazdu do naszego bufetu: </h4>
             <ul>

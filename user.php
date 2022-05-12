@@ -27,7 +27,7 @@
                     header('Location: profile.php');
                 }
             ?>
-        </div>
+        </div class="left">
         <br><br><div class="left" style="clear: both;">
             <h3>Logowanie:</h3>
             <form action="./php/login.php" method="POST">
@@ -64,6 +64,6 @@
             </ul>
         </div>
     </div>
-    <marquee behavior="scroll" direction="right" class=""><p> lacznik-zsl.pl</p></marquee>
+    <marquee behavior="scroll" direction="right" class="plywtekst"><p> lacznik-zsl.pl</p></marquee>
 </body>
 </html>

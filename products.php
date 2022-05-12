@@ -29,7 +29,7 @@
                 <p>Wpisz wyszukiwany produkt: <input type="text" name="productQuery" value="<?php
                 if(isset($_GET['productQuery'])&&!empty($_GET['productQuery'])) echo htmlentities($_GET['productQuery'],ENT_QUOTES);
                 ?>"></p>
-                <input type="submit" value="Szukaj">
+                <input class="button" type="submit" value="Szukaj">
             </form>
             <h2>Aktualnie w promocji!</h2>
             <?php require './php/displayPromo.php' ?>    

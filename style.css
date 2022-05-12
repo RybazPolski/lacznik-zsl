@@ -6,7 +6,7 @@ body{
     float: left;
     text-align: center;
     font-size: 1.2em;
-    width: 170px;
+    size: 100%;
     text-decoration: none;
     color: rgb(255, 255, 255);
     background-color: #2b2d72;
@@ -44,14 +44,14 @@ input[type=text],input[type=password],input[type=number]{
     border-bottom-color: #2b2d72;
 }
 
-/* .left{
+.left{
     text-align:left;
     margin-right: 1200px;
 }
 .right{
     text-align:left;
     margin-right: 1200px;
-} */
+} 
 .footer{
     text-align: left;
 }
@@ -78,4 +78,16 @@ input[type=text],input[type=password],input[type=number]{
        color:#2b2d72;
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
       
+}
+#title{
+    size: 75%;
+    text-align: center;
+}
+#dateParagraph{
+    
+    font-size: 60%;
+    
+}
+#lokal{
+    font-size: 25%;
 }
