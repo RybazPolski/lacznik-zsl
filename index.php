@@ -13,7 +13,7 @@
         <div class="baner">
         <img src="zsl-logo.png" class="logo">
         <img src="bufet-lacznik-blue.png" class="logo2">
-            <div class="title"><b>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</b></div>
+            <div class="title"><h3><b>Bufet "Łącznik" w Zespole Szkół Łączności im. Mikołaja Kopernika w Poznaniu</b></h3></div>
             <h3 id="dateParagraph"></h3>
             <script src="js/date.js"></script>
         </div>
