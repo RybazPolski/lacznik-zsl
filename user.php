@@ -27,7 +27,8 @@
                     header('Location: profile.php');
                 }
             ?>
-        </div class="left">
+            <div>
+        </div id="left">
         <br><br><div class="left" style="clear: both;">
             <h3>Logowanie:</h3>
             <form action="./php/login.php" method="POST">
@@ -38,7 +39,7 @@
                 <input type="submit" class="button" value="Zaloguj" name="submitLogin">
             </form>
         </div>
-        <div class="right">
+        <div id="right">
             <h3>Rejestracja nowego konta:</h3>
             <form action="./php/register.php" method="POST">
                 <label for="login">Login:<span style="color:red;">*</span> </label><br><input type="text" class="pass" name="login" required><br>
@@ -50,7 +51,9 @@
                 <input type="submit" class="button" value="Zarejestruj" name="submitRegister">
              </form>
         </div>
-        <div class="footer">
+            </div>
+            </div>
+        <div id="footer">
             <h4>Autorzy:</h4>
             <ul>
                 <li>Julian Rybarczyk</li>
@@ -63,7 +66,7 @@
 
             </ul>
         </div>
-    </div>
+            
     <marquee behavior="scroll" direction="right" class="plywtekst"><p> lacznik-zsl.pl</p></marquee>
 </body>
 </html>

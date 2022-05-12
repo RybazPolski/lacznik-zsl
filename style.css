@@ -44,13 +44,12 @@ input[type=text],input[type=password],input[type=number]{
     border-bottom-color: #2b2d72;
 }
 
-.left{
-    text-align:left;
-    margin-right: 1200px;
+#left{
+    float: left;
 }
-.right{
-    text-align:left;
-    margin-right: 1200px;
+#right{
+    float: right;
+    margin-right: 450px;
 } 
 .footer{
     text-align: left;
@@ -93,4 +92,7 @@ input[type=text],input[type=password],input[type=number]{
 }
 #lokal{
     font-size: 25%;
+}
+#footer{
+    float: bottom;
 }
