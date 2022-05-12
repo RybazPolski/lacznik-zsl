@@ -27,7 +27,7 @@ if(checkInput('login','POST')&&checkInput('pass','POST')&&checkInput('pass2','PO
     };
     
     if(strlen($_POST['login'])<3){
-        header("Location: ../user.php?registerError=Za długi login! (min 3 znaki)");
+        header("Location: ../user.php?registerError=Za krótki login! (min 3 znaki)");
         exit();
     };
     if(strlen($_POST['login'])>16){
